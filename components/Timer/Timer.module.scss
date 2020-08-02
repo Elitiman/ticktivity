@@ -1,0 +1,12 @@
+@import "../../styles/variables.scss";
+
+.timerCont {
+  background-color: $red;
+  border-radius: 7px;
+  padding: 0 10px;
+  .timerText {
+    font-size: 80px;
+    margin: 0;
+    color: $white;
+  }
+}

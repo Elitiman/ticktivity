@@ -114,6 +114,9 @@
 .logo {
   height: 1em;
 }
+.section {
+  margin: 20px 0;
+}
 
 @media (max-width: 600px) {
   .grid {
