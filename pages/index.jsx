@@ -2,8 +2,10 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Timer from "../components/Timer/Timer";
 import Button from "../components/Button/Button";
+import Login from "../components/Login/Login";
+import { connect } from "react-redux";
 
-export default function Home() {
+function Home({ popup }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -20,9 +22,15 @@ export default function Home() {
           <Button>Stop</Button>
         </div>
       </main>
+      {popup ? <Login /> : null}
       <footer className={styles.footer}>
         <a href="/about">About us</a>
       </footer>
     </div>
   );
 }
+const mapStateToProps = ({ loginReducer: { popup } }) => ({
+  popup,
+});
+
+export default connect(mapStateToProps)(Home);
