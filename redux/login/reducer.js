@@ -8,7 +8,7 @@ const INITIAL_STATE = {
 export function loginReducer(preloadedState = INITIAL_STATE, action) {
   const { type, payload } = action;
   switch (type) {
-    case loginTypes.LOGINPOPUPTOGGLE:
+    case loginTypes.LOGIN_POPUP_TOGGLE:
       return { ...preloadedState, popup: !preloadedState.popup };
 
     default:
