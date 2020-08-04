@@ -1,0 +1,22 @@
+@import "../../styles/variables.scss";
+
+.header {
+  width: 100%;
+  position: fixed;
+  background-color: $white;
+  border-bottom: 1px solid #ddd;
+  top: 0;
+  nav a {
+    text-decoration: none;
+    padding: 25px;
+    display: inline-block;
+    transition: 0.25s;
+    &:hover {
+      background-color: $black;
+      color: $cream;
+    }
+  }
+  .nav-right {
+    float: right;
+  }
+}

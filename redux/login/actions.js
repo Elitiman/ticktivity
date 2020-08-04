@@ -1,5 +1,5 @@
 import { loginTypes } from "./types";
 
-export const LOGIN_POPUP_TOGGLE = () => ({
+export const loginToggle = () => ({
   type: loginTypes.LOGIN_POPUP_TOGGLE,
 });
