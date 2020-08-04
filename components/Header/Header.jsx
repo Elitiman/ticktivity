@@ -8,10 +8,10 @@ const Header = ({ loginToggle }) => {
   return (
     <header className={styles.header}>
       <nav>
-        <a href="">Home</a>
+        <a href="/">Home</a>
         <span className={styles["nav-right"]}>
           <a onClick={() => loginToggle()}>Login</a>
-          <a href="">About</a>
+          <a href="/about">About</a>
         </span>
       </nav>
     </header>
