@@ -1,10 +1,14 @@
+@import "../../styles/variables.scss";
+
 .footer {
   width: 100%;
   border-top: 1px solid #eaeaea;
   display: flex;
   justify-content: center;
   align-items: center;
-  max-height: 15vh;
+  min-height: 15vh;
+  color: $white;
+  background-color: $black;
 }
 
 .footer img {
