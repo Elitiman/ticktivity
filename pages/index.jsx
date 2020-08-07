@@ -5,8 +5,9 @@ import Button from "../components/Button/Button";
 import Login from "../components/Login/Login";
 import { connect } from "react-redux";
 import Layout from "../Layout/Layout";
+import { incrementCount } from "../redux/counter/actions";
 
-function Home({ popup }) {
+function Home({ popup, incrementCount, count }) {
   return (
     <Layout>
       <div className={styles.container}>
@@ -25,15 +26,25 @@ function Home({ popup }) {
           <div>
             <Button>Start</Button>
             <Button>Stop</Button>
+            <Button onClick={incrementCount}>Increment</Button>
           </div>
+          <h3>{count}</h3>
         </main>
         {popup ? <Login /> : null}
       </div>
     </Layout>
   );
 }
-const mapStateToProps = ({ loginReducer: { popup } }) => ({
+const mapStateToProps = ({
+  loginReducer: { popup },
+  countReducer: { count },
+}) => ({
   popup,
+  count,
 });
 
-export default connect(mapStateToProps)(Home);
+const mapDispatchToProps = (dispatch) => ({
+  incrementCount: () => dispatch(incrementCount()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
