@@ -2,8 +2,10 @@ import React from "react";
 import styles from "./Login.module.scss";
 import CloseIcon from "../../assets/close.svg";
 import Button from "../Button/Button";
+import { connect } from "react-redux";
+import { loginToggle } from "../../redux/login/actions";
 
-const Login = () => {
+const Login = ({ loginToggle }) => {
   const btn = {
     borderRadius: "50%",
     position: "absolute",
@@ -14,7 +16,7 @@ const Login = () => {
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <h2>Login in with Social Network</h2>
-        <Button style={btn}>
+        <Button style={btn} onClick={() => loginToggle()}>
           <CloseIcon />
         </Button>
         <div>
@@ -33,5 +35,10 @@ const Login = () => {
     </div>
   );
 };
+const mapStateToProps = (state) => ({});
 
-export default Login;
+const mapDispatchToProps = (dispatch) => ({
+  loginToggle: () => dispatch(loginToggle()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
