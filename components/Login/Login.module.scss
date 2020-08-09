@@ -16,8 +16,47 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 10px;
+  padding: 5rem;
   border-radius: 5px;
+  .title {
+    color: $grey;
+    font-size: 2rem;
+    margin-top: 0;
+  }
+  .para {
+    color: $grey;
+    font-size: 1.5rem;
+  }
+}
+.social-container {
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 2rem 0 0;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 50px 100%;
+  justify-items: start;
+  align-items: center;
+  p {
+    font-size: 2rem;
+    padding: 0;
+    color: $white;
+    margin: 0;
+  }
+}
+.facebook {
+  background: #43609d;
+}
+.twitter {
+  background: #1da1f2;
+}
+.github {
+  background: #24292e;
+}
+.google {
+  background: #ea4335;
 }
 .btn {
   border-radius: 50%;

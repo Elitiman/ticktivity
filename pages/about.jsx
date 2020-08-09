@@ -5,7 +5,6 @@ import styles from "../styles/Home.module.css";
 const About = () => {
   return (
     <Layout>
-      {" "}
       <main className={styles.main}>
         <h1 className={styles.title}>About us</h1>
         <p className={styles.description}>
