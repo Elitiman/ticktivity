@@ -7,14 +7,14 @@ import { connect } from "react-redux";
 
 const Layout = ({ children, popup, ...otherProps }) => {
   return (
-    <React.Fragment {...otherProps}>
+    <div>
       <Header />
       <main className={styles.main}>
         {children}
         {popup ? <Login /> : null}
       </main>
       <Footer />
-    </React.Fragment>
+    </div>
   );
 };
 const mapStateToProps = ({ loginReducer: { popup } }) => ({
