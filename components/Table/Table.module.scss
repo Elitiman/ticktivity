@@ -9,6 +9,7 @@
     outline: none;
   }
 }
+
 .row-container {
   background: $white;
   border-radius: 4px;
@@ -19,28 +20,28 @@
   align-items: center;
   padding: 1rem 1.5rem;
   margin: 1rem 0;
-  .time {
-    color: $grey;
-  }
-  .description,
-  .category {
+}
+.time {
+  color: $grey;
+}
+.description,
+.category {
+  cursor: pointer;
+}
+.count {
+  .circle {
+    border: 1px solid $grey;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    position: relative;
     cursor: pointer;
-  }
-  .count {
-    .circle {
-      border: 1px solid $grey;
-      border-radius: 50%;
-      width: 32px;
-      height: 32px;
-      position: relative;
-      cursor: pointer;
-      p {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin: 0;
-        transform: translate(-50%, -50%);
-      }
+    p {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: 0;
+      transform: translate(-50%, -50%);
     }
   }
 }
