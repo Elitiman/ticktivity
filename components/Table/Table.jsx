@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "./Table.module.scss";
+import PlusIcon from "../../assets/plus.svg";
+import MoreIcon from "../../assets/more.svg";
 
 const TableRowInput = () => (
   <div className={styles["row-container"]}>
@@ -22,10 +24,12 @@ const TableRowInput = () => (
     <div className={styles.time}></div>
     <div className={styles.count}>
       <div className={styles.circle}>
-        <p>+</p>
+        <p>
+          {" "}
+          <PlusIcon />
+        </p>
       </div>
     </div>
-    <div className={styles.submenu}>Opt</div>
   </div>
 );
 
@@ -42,10 +46,15 @@ const TableRow = () => (
     </div>
     <div className={styles.count}>
       <div className={styles.circle}>
-        <p>1</p>
+        <p>
+          {" "}
+          <PlusIcon />
+        </p>
       </div>
     </div>
-    <div className={styles.submenu}>...</div>
+    <div className={styles.submenu}>
+      <MoreIcon />
+    </div>
   </div>
 );
 
