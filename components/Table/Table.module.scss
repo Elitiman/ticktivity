@@ -1,19 +1,46 @@
 @import "../../styles/variables.scss";
-
+.table {
+  width: 100%;
+  p {
+    font-size: 1.6rem;
+  }
+  input {
+    border: none;
+    outline: none;
+  }
+}
 .row-container {
-  background: $black;
+  background: $white;
   border-radius: 4px;
   width: 100%;
   display: grid;
-  grid-template-columns: 2fr 5fr 1fr 1fr 1fr;
+  box-shadow: -1px 1px 7px 0px rgba(173, 173, 173, 1);
+  grid-template-columns: 3fr 5fr 2fr 50px 20px;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
   .time {
     color: $grey;
   }
+  .description,
+  .category {
+    cursor: pointer;
+  }
   .count {
-    p {
+    .circle {
       border: 1px solid $grey;
       border-radius: 50%;
-      padding: 5px;
+      width: 32px;
+      height: 32px;
+      position: relative;
+      cursor: pointer;
+      p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: 0;
+        transform: translate(-50%, -50%);
+      }
     }
   }
 }
