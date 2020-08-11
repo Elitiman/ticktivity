@@ -10,8 +10,13 @@ import GoogleLogo from "../../assets/google-logo.svg";
 
 const Login = ({ loginToggle }) => {
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.container}>
+    <div className={styles.wrapper} onClick={() => loginToggle()}>
+      <div
+        className={styles.container}
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
+      >
         <h2 className={styles.title}>Register or Login</h2>
         <p className={styles.para}>
           Create or log in using your existing social media account
