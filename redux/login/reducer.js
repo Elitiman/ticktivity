@@ -1,6 +1,6 @@
 import { loginTypes } from "./types";
 
-const INITIAL_STATE = {
+export const INITIAL_STATE = {
   popup: false,
   loggedIn: false,
 };

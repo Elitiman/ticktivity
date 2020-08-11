@@ -25,7 +25,6 @@ const TableRowInput = () => (
     <div className={styles.count}>
       <div className={styles.circle}>
         <p>
-          {" "}
           <PlusIcon />
         </p>
       </div>

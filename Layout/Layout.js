@@ -5,7 +5,7 @@ import styles from "./Layout.module.scss";
 import Login from "../components/Login/Login";
 import { connect } from "react-redux";
 
-const Layout = ({ children, popup, ...otherProps }) => {
+const Layout = ({ children, popup }) => {
   return (
     <div>
       <Header />
