@@ -13,6 +13,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 50vw;
+  min-width: 300px;
 }
 
 .footer {
