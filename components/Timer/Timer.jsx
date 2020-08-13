@@ -20,8 +20,8 @@ const Timer = () => {
 
       let countDownTime = countDownDate.getTime();
       console.log("countDownTime : ", countDownTime);
-      timerInterval = setInterval(() => {
         var now = new Date().getTime();
+      timerInterval = setInterval(() => {
 
         let distance = countDownTime - now;
         let mins = Math.floor(distance / (1000 * 60));
