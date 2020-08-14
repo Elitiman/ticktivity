@@ -6,23 +6,23 @@ const Timer = () => {
     minutes: "25",
     seconds: "00",
     running: false,
+    timerId: 0,
   });
-  var timerInterval;
+
   const triggerTimer = () => {
     if (timer.running) {
-      clearInterval(timerInterval);
       setTimer((prev) => ({ ...prev, running: false }));
+      clearInterval(timer.timerId);
     } else {
+      setTimer((prev) => ({ ...prev, running: true }));
       var countDownDate = new Date();
       countDownDate.setMinutes(
         countDownDate.getMinutes() + parseInt(timer.minutes)
       );
 
-      let countDownTime = countDownDate.getTime();
-      console.log("countDownTime : ", countDownTime);
+      let timerInterval = setInterval(() => {
+        let countDownTime = countDownDate.getTime();
         var now = new Date().getTime();
-      timerInterval = setInterval(() => {
-
         let distance = countDownTime - now;
         let mins = Math.floor(distance / (1000 * 60));
         let secs = Math.floor((distance % (1000 * 60)) / 1000);
@@ -32,7 +32,7 @@ const Timer = () => {
           seconds: secs.toString(),
         }));
         if (distance < 0) {
-          clearInterval(timerInterval);
+          clearInterval(timer.timerId);
           setTimer((prev) => ({
             ...prev,
             minutes: "25",
@@ -40,7 +40,8 @@ const Timer = () => {
             running: false,
           }));
         }
-      }, 1000);
+      }, 500);
+      setTimer((prev) => ({ ...prev, timerId: timerInterval }));
     }
   };
   return (
