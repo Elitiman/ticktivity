@@ -3,8 +3,8 @@ import styles from "./Timer.module.scss";
 import Button from "../Button/Button";
 const Timer = () => {
   const [timer, setTimer] = useState({
-    minutes: "25",
-    seconds: "00",
+    minutes: "00",
+    seconds: "10",
     running: false,
     timerId: 0,
   });
@@ -15,23 +15,22 @@ const Timer = () => {
       clearInterval(timer.timerId);
     } else {
       setTimer((prev) => ({ ...prev, running: true }));
-      var countDownDate = new Date();
+      /* var countDownDate = new Date();
       countDownDate.setMinutes(
         countDownDate.getMinutes() + parseInt(timer.minutes)
-      );
+      ); */
 
+      var countDown = parseInt(timer.minutes) * 60 + parseInt(timer.seconds);
       let timerInterval = setInterval(() => {
-        let countDownTime = countDownDate.getTime();
-        var now = new Date().getTime();
-        let distance = countDownTime - now;
-        let mins = Math.floor(distance / (1000 * 60));
-        let secs = Math.floor((distance % (1000 * 60)) / 1000);
+        countDown--;
+        let mins = Math.floor(countDown / 60);
+        let secs = Math.floor(countDown % 60);
         setTimer((prev) => ({
           ...prev,
           minutes: mins,
           seconds: secs.toString(),
         }));
-        if (distance < 0) {
+        if (countDown < 0) {
           clearInterval(timer.timerId);
           setTimer((prev) => ({
             ...prev,
@@ -40,7 +39,7 @@ const Timer = () => {
             running: false,
           }));
         }
-      }, 500);
+      }, 1000);
       setTimer((prev) => ({ ...prev, timerId: timerInterval }));
     }
   };
