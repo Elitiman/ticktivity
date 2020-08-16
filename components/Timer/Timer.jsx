@@ -3,8 +3,8 @@ import styles from "./Timer.module.scss";
 import Button from "../Button/Button";
 const Timer = () => {
   const [timer, setTimer] = useState({
-    minutes: "00",
-    seconds: "10",
+    minutes: "25",
+    seconds: "00",
     running: false,
     timerId: 0,
   });
@@ -15,10 +15,6 @@ const Timer = () => {
       clearInterval(timer.timerId);
     } else {
       setTimer((prev) => ({ ...prev, running: true }));
-      /* var countDownDate = new Date();
-      countDownDate.setMinutes(
-        countDownDate.getMinutes() + parseInt(timer.minutes)
-      ); */
 
       var countDown = parseInt(timer.minutes) * 60 + parseInt(timer.seconds);
       let timerInterval = setInterval(() => {
@@ -43,6 +39,17 @@ const Timer = () => {
       setTimer((prev) => ({ ...prev, timerId: timerInterval }));
     }
   };
+
+  const stopTimer = () => {
+    clearInterval(timer.timerId);
+    setTimer((prev) => ({
+      ...prev,
+      minutes: "25",
+      seconds: "00",
+      running: false,
+      timerId: 0,
+    }));
+  };
   return (
     <React.Fragment>
       <div className={styles.timerCont}>
@@ -52,7 +59,7 @@ const Timer = () => {
       </div>
       <div>
         <Button onClick={triggerTimer}>Start</Button>
-        <Button>Stop</Button>
+        <Button onClick={stopTimer}>Stop</Button>
       </div>
     </React.Fragment>
   );
