@@ -3,6 +3,7 @@ import React from "react";
 import styles from "./Header.module.scss";
 import { connect } from "react-redux";
 import { loginToggle } from "../../redux/login/actions";
+import ActiveLink from "../ActiveLink/ActiveLink";
 
 const Header = ({ loginToggle }) => {
   return (
@@ -12,6 +13,7 @@ const Header = ({ loginToggle }) => {
         <span className={styles["nav-right"]}>
           <a onClick={() => loginToggle()}>Login</a>
           <a href="/about">About</a>
+          <ActiveLink href="/settings">Settings</ActiveLink>
         </span>
       </nav>
     </header>
