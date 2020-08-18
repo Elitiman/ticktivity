@@ -5,19 +5,19 @@ import styles from "./Layout.module.scss";
 import Login from "../components/Login/Login";
 import { connect } from "react-redux";
 
-const Layout = ({ children, popup }) => {
+const Layout = ({ children, loginPopup }) => {
   return (
     <div>
       <Header />
       <main className={styles.main}>
         {children}
-        {popup ? <Login /> : null}
+        {loginPopup ? <Login /> : null}
       </main>
       <Footer />
     </div>
   );
 };
-const mapStateToProps = ({ loginReducer: { popup } }) => ({
-  popup,
+const mapStateToProps = ({ loginReducer: { popup: loginPopup } }) => ({
+  loginPopup,
 });
 export default connect(mapStateToProps)(Layout);
