@@ -1,11 +1,11 @@
-import { countReducer } from "./counter/reducer";
+import { settingsReducer } from "./settings/reducer";
 
 const { combineReducers } = require("redux");
 const { loginReducer } = require("./login/reducer");
 
 const reducers = {
   loginReducer,
-  countReducer,
+  settingsReducer,
 };
 
 export default combineReducers(reducers);

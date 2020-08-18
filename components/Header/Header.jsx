@@ -3,9 +3,9 @@ import React from "react";
 import styles from "./Header.module.scss";
 import { connect } from "react-redux";
 import { loginToggle } from "../../redux/login/actions";
-import ActiveLink from "../ActiveLink/ActiveLink";
+import { settingsToggle } from "../../redux/settings/actions";
 
-const Header = ({ loginToggle }) => {
+const Header = ({ loginToggle, settingsToggle }) => {
   return (
     <header className={styles.header}>
       <nav>
@@ -13,16 +13,16 @@ const Header = ({ loginToggle }) => {
         <span className={styles["nav-right"]}>
           <a onClick={() => loginToggle()}>Login</a>
           <a href="/about">About</a>
-          <ActiveLink href="/settings">Settings</ActiveLink>
+          <a onClick={() => settingsToggle()}>Settings</a>
         </span>
       </nav>
     </header>
   );
 };
-const mapStateToProps = (state) => ({});
 
 const mapDispatchToProps = (dispatch) => ({
   loginToggle: () => dispatch(loginToggle()),
+  settingsToggle: () => dispatch(settingsToggle()),
 });
 
 export default connect(null, mapDispatchToProps)(Header);
