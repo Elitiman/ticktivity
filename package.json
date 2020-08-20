@@ -8,6 +8,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "@apollo/react-hooks": "^4.0.0",
+    "apollo-boost": "^0.4.9",
+    "apollo-link-ws": "^1.0.20",
+    "graphql": "^15.3.0",
     "next": "9.5.1",
     "node-sass": "^4.14.1",
     "react": "16.13.1",
@@ -15,6 +19,7 @@
     "react-icons": "^3.10.0",
     "react-redux": "^7.2.1",
     "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "subscriptions-transport-ws": "^0.9.18"
   }
 }
