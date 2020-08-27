@@ -1,5 +1,4 @@
-import React from "react";
-// import Link from "next/link";
+import Link from "next/link";
 import styles from "./Header.module.scss";
 import { connect } from "react-redux";
 import { loginToggle } from "../../redux/login/actions";
@@ -9,10 +8,14 @@ const Header = ({ loginToggle, settingsToggle }) => {
   return (
     <header className={styles.header}>
       <nav>
-        <a href="/">Home</a>
+        <Link href="/">
+          <a>Home</a>
+        </Link>
         <span className={styles["nav-right"]}>
           <a onClick={() => loginToggle()}>Login</a>
-          <a href="/about">About</a>
+          <Link href="/about">
+            <a>About</a>
+          </Link>
           <a onClick={() => settingsToggle()}>Settings</a>
         </span>
       </nav>
