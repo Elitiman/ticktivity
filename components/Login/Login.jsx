@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Login.module.scss";
 import CloseIcon from "../../assets/close.svg";
 import { connect } from "react-redux";

@@ -1,9 +1,11 @@
-import React from "react";
 import styles from "./Footer.module.scss";
+import Link from "next/link";
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <a href="/about">About us</a>
+      <Link href="/about">
+        <a>About us</a>
+      </Link>
     </footer>
   );
 };
