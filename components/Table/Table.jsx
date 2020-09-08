@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Table.module.scss";
 import {
   FiPlusCircle as PlusIcon,
