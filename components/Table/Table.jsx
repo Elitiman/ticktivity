@@ -1,8 +1,11 @@
 import styles from "./Table.module.scss";
+
 import {
   FiPlusCircle as PlusIcon,
   FiMoreHorizontal as MoreIcon,
 } from "react-icons/fi";
+import { addContenToTable } from "../../redux/table-data/actions";
+import { connect } from "react-redux";
 
 const TableRowInput = () => (
   <div className={styles["row-container"]}>
@@ -58,4 +61,9 @@ const Table = () => {
   );
 };
 
-export default Table;
+const mapStateToProps = (state) => ({});
+
+const mapDispatchToProps = (dispatch) => ({
+  addContenToTable: (data) => dispatch(addContenToTable(data)),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(Table);
