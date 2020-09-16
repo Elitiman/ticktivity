@@ -38,3 +38,16 @@
   position: relative;
   top: 3px;
 }
+@keyframes autofill {
+  0%,
+  100% {
+    color: #666;
+    background: transparent;
+  }
+}
+
+.input:autofill {
+  animation-delay: 1s; /* Safari support - any positive time runs instantly */
+  animation-name: autofill;
+  animation-fill-mode: both;
+}

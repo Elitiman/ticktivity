@@ -8,7 +8,7 @@ export default function tableDataReducer(state = INITIAL_STATE, action) {
   const { type, payload } = action;
   switch (type) {
     case TableDataType.ADD_CONTENT:
-      return { ...state, contents: [...state.contents, payload] };
+      return { ...state, contents: [payload, ...state.contents] };
 
     default:
       return state;
