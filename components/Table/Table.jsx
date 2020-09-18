@@ -7,9 +7,22 @@ import {
 import { addContenToTable } from "../../redux/table-data/actions";
 import { connect } from "react-redux";
 
-const TableRowInput = ({ addContenToTable }) => {
+const TableRowInput = ({ addContenToTable, contents }) => {
   const category = React.createRef();
   const description = React.createRef();
+  const getDataTime = () => {
+    let tempTime;
+    console.log("contents", contents);
+    const length = contents.length;
+    if (length > 0) {
+      // var d = new Date();
+      // d.setMinutes(d.getMinutes() - 90);
+      tempTime = contents[length - 1].time.getMinutes() + 25;
+    } else {
+      tempTime = new Date();
+    }
+    return tempTime;
+  };
 
   return (
     <div className={styles["row-container"]}>
@@ -24,9 +37,11 @@ const TableRowInput = ({ addContenToTable }) => {
           // onChange={handleChange}
           onKeyUp={(e) => {
             if (e.key == "Enter") {
+              const dataTime = getDataTime();
               addContenToTable({
                 category: category.current.value,
                 description: description.current.value,
+                time: dataTime,
               });
               category.current.value = "";
               description.current.value = "";
@@ -44,9 +59,11 @@ const TableRowInput = ({ addContenToTable }) => {
           className={styles.input}
           onKeyUp={(e) => {
             if (e.key == "Enter") {
+              const dataTime = getDataTime();
               addContenToTable({
                 category: category.current.value,
                 description: description.current.value,
+                time: dataTime,
               });
               category.current.value = "";
               description.current.value = "";
@@ -58,9 +75,11 @@ const TableRowInput = ({ addContenToTable }) => {
       <div className={styles.count}>
         <PlusIcon
           onClick={() => {
+            const dataTime = getDataTime();
             addContenToTable({
               category: category.current.value,
               description: description.current.value,
+              time: dataTime,
             });
             category.current.value = "";
             description.current.value = "";
@@ -82,7 +101,7 @@ const TableRow = ({ data }) => {
         <p>{data.description}</p>
       </div>
       <div className={styles.time}>
-        <p>09:45pm</p>
+        <p>{data.time.toLocaleString()}</p>
       </div>
       <div className={styles.count}>
         <PlusIcon className={styles.icon} />
@@ -97,7 +116,7 @@ const TableRow = ({ data }) => {
 const Table = ({ addContenToTable, contents }) => {
   return (
     <div className={styles.table}>
-      <TableRowInput addContenToTable={addContenToTable} />
+      <TableRowInput addContenToTable={addContenToTable} contents={contents} />
       {contents.map((data, i) => (
         <TableRow key={i} data={data} />
       ))}
