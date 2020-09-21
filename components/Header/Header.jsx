@@ -16,7 +16,9 @@ const Header = ({ loginToggle, settingsToggle }) => {
           <Link href="/about">
             <a>About</a>
           </Link>
-          <a onClick={() => settingsToggle()}>Settings</a>
+          <Link href="/settings">
+            <a>Settings</a>
+          </Link>
         </span>
       </nav>
     </header>
