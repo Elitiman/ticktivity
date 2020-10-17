@@ -1,7 +1,8 @@
 import { useState } from "react";
 import styles from "./Timer.module.scss";
 import Button from "../Button/Button";
-const Timer = () => {
+import { connect } from "react-redux";
+const Timer = ({ contents }) => {
   const [timer, setTimer] = useState({
     minutes: "25",
     seconds: "00",
@@ -56,6 +57,9 @@ const Timer = () => {
         <h2
           className={styles.timerText}
         >{`${timer.minutes}:${timer.seconds}`}</h2>
+        {contents.length > 0 && (
+          <p className={styles.desc}>{contents[0].description}</p>
+        )}
       </div>
       <div>
         <Button onClick={triggerTimer}>Start</Button>
@@ -65,4 +69,8 @@ const Timer = () => {
   );
 };
 
-export default Timer;
+const mapStateToProps = (state) => ({
+  contents: state.tableDataReducer.contents,
+});
+
+export default connect(mapStateToProps)(Timer);
