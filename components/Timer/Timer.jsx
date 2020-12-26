@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./Timer.module.scss";
 import Button from "../Button/Button";
 import { connect } from "react-redux";
-const Timer = ({ contents }) => {
+const Timer = ({ contents, timerData }) => {
   const [timer, setTimer] = useState({
     minutes: "25",
     seconds: "00",
@@ -71,6 +71,7 @@ const Timer = ({ contents }) => {
 
 const mapStateToProps = (state) => ({
   contents: state.tableDataReducer.contents,
+  timerData: state.timerReducer,
 });
 
 export default connect(mapStateToProps)(Timer);
