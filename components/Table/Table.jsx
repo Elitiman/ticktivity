@@ -56,6 +56,7 @@ const TableRowInput = ({ addContenToTable, contents }) => {
           placeholder="Short Description"
           id="inp-desc"
           ref={description}
+          required
           className={styles.input}
           onKeyUp={(e) => {
             if (e.key == "Enter") {
@@ -76,11 +77,16 @@ const TableRowInput = ({ addContenToTable, contents }) => {
         <PlusIcon
           onClick={() => {
             const dataTime = getDataTime();
-            addContenToTable({
-              category: category.current.value,
-              description: description.current.value,
-              time: dataTime,
-            });
+            if (description.current.value) {
+              addContenToTable({
+                category: category.current.value,
+                description: description.current.value,
+                time: dataTime,
+              });
+            } else {
+              alert("Please enter a Description");
+              return;
+            }
             category.current.value = "";
             description.current.value = "";
           }}
