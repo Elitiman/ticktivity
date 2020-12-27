@@ -52,7 +52,7 @@ const Timer = ({ contents, timerData }) => {
     }));
   };
   return (
-    <React.Fragment>
+    <>
       <div className={styles.timerCont}>
         <h2
           className={styles.timerText}
@@ -65,7 +65,7 @@ const Timer = ({ contents, timerData }) => {
         <Button onClick={triggerTimer}>Start</Button>
         <Button onClick={stopTimer}>Stop</Button>
       </div>
-    </React.Fragment>
+    </>
   );
 };
 

@@ -1,4 +1,5 @@
 import styles from "./Table.module.scss";
+import { createRef } from "react";
 
 import {
   FiPlusCircle as PlusIcon,
@@ -8,8 +9,8 @@ import { addContenToTable } from "../../redux/table-data/actions";
 import { connect } from "react-redux";
 
 const TableRowInput = ({ addContenToTable, contents }) => {
-  const category = React.createRef();
-  const description = React.createRef();
+  const category = createRef();
+  const description = createRef();
   const getDataTime = () => {
     let tempTime;
     console.log("contents", contents);
@@ -34,6 +35,7 @@ const TableRowInput = ({ addContenToTable, contents }) => {
           id="inp-category"
           ref={category}
           className={styles.input}
+          autoComplete="off"
           // onChange={handleChange}
           onKeyUp={(e) => {
             if (e.key == "Enter") {
@@ -57,6 +59,7 @@ const TableRowInput = ({ addContenToTable, contents }) => {
           id="inp-desc"
           ref={description}
           required
+          autoComplete="off"
           className={styles.input}
           onKeyUp={(e) => {
             if (e.key == "Enter") {
