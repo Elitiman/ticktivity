@@ -34,6 +34,7 @@ const TableRowInput = ({ addContenToTable, contents }) => {
           id="inp-category"
           ref={category}
           className={styles.input}
+          autoComplete="off"
           // onChange={handleChange}
           onKeyUp={(e) => {
             if (e.key == "Enter") {
@@ -57,6 +58,7 @@ const TableRowInput = ({ addContenToTable, contents }) => {
           id="inp-desc"
           ref={description}
           required
+          autoComplete="off"
           className={styles.input}
           onKeyUp={(e) => {
             if (e.key == "Enter") {
