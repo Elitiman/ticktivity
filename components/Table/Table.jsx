@@ -1,4 +1,5 @@
 import styles from "./Table.module.scss";
+import { createRef } from "react";
 
 import {
   FiPlusCircle as PlusIcon,
@@ -8,8 +9,8 @@ import { addContenToTable } from "../../redux/table-data/actions";
 import { connect } from "react-redux";
 
 const TableRowInput = ({ addContenToTable, contents }) => {
-  const category = React.createRef();
-  const description = React.createRef();
+  const category = createRef();
+  const description = createRef();
   const getDataTime = () => {
     let tempTime;
     console.log("contents", contents);

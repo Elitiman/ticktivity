@@ -1,8 +1,9 @@
 import styles from "./Config.module.scss";
+import { createRef } from "react";
 
 const Config = () => {
-  const duration = React.createRef();
-  const breakTime = React.createRef();
+  const duration = createRef();
+  const breakTime = createRef();
   return (
     <div children={styles.wrapper}>
       <div className={styles.container}>
