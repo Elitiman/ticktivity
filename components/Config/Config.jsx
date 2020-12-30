@@ -8,11 +8,10 @@ const Config = () => {
     <div children={styles.wrapper}>
       <div className={styles.container}>
         <label htmlFor="">Pomodoro Duration:</label>
-        <input type="number" ref={duration} />
-        <span>in minutes</span>
+        <input placeholder="minutes" type="number" ref={duration} />
         <label htmlFor="">Break Duration:</label>
-        <input type="number" ref={breakTime} />
-        <span>in minutes</span>
+        <input placeholder="minutes" type="number" ref={breakTime} />
+        <button>Save</button>
       </div>
     </div>
   );
