@@ -6,5 +6,6 @@ export default (req, res) => {
   if (req.method !== "GET") {
     res.status(500).json({ message: "sorry we accept only get request" });
   }
-  res.json({ name: "John Doe", method: req.method });
+  const date = new Date();
+  res.json({ name: date, method: req.method });
 };
