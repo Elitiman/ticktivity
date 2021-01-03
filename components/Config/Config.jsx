@@ -11,7 +11,7 @@ const Config = () => {
         <input placeholder="minutes" type="number" ref={duration} />
         <label htmlFor="">Break Duration:</label>
         <input placeholder="minutes" type="number" ref={breakTime} />
-        <button>Save</button>
+        <button className={styles.btn}>Save</button>
       </div>
     </div>
   );

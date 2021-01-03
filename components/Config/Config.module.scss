@@ -22,3 +22,17 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
 }
+.btn {
+  background: transparent;
+  border: 2px solid darkblue;
+  color: darkblue;
+  transition: 0.4s;
+  border-radius: 7px;
+  padding: 5px;
+  width: fit-content;
+  &:hover {
+    background: darkblue;
+    border: 2px solid darkblue;
+    color: white;
+  }
+}
